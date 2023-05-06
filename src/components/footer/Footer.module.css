@@ -1,0 +1,10 @@
+.footer__adress {
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 400;
+   font-size: var(--general-text);
+   line-height: 17px;
+   text-align: right;
+   letter-spacing: 0.01em;
+   color: var(--white);
+}
