@@ -4,13 +4,11 @@
    align-items: flex-start;
 }
 
-.search__column:first-child {
-   margin-right: 80px;
-}
-
 .search__column:last-child {
    justify-content: flex-end;
    position: relative;
+   display: flex;
+   width: 100%;
 }
 
 
@@ -94,7 +92,6 @@
    .search__manWith {
       width: 350px;
       height: 403px;
-      margin-left: 30px;
    }
    .search__texts {
       margin-left: 20px;

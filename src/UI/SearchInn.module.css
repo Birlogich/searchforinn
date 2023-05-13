@@ -62,9 +62,28 @@
    max-width: 242px;
    padding-left: 22px;
 }
+.innForm__row_footer {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.innForm__range {
+   display: flex;
+   width: 100%;
+   max-width: 376px;
+   justify-content: space-between;
+   margin-right: 112px;
+}
 
 .innForm__input_range {
+   width: 176px;  
+   margin-right: 20px;
+}
+
+.innForm__input_range:nth-child(2) {
    max-width: 176px;  
+   margin-right: 0px;
 }
 
 .innForm__option {
@@ -75,7 +94,6 @@
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   width: 100%;
 }
 
 .innForm__btn {
@@ -90,6 +108,7 @@
    background: #5970FF;
    border-radius: 5px;
    margin-bottom: 10px;
+   max-width: 305px;
 }
 
 .innForm__require {
@@ -102,7 +121,7 @@
 
 .innForm__label_check {
    font-family: 'Inter';
-   font-size: 18px;
+   font-size: 17px;
    line-height: 22px;
    letter-spacing: 0.03em;
    color: #000000;   

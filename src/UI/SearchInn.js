@@ -67,24 +67,26 @@ export const SearchInn = () => {
       <div className={styles.innForm__footer}>
         <label className={styles.innForm__label}>Диапазон поиска*</label>
         <div className={`${styles.innForm__row} ${styles.innForm__row_footer}`}>
-          <input
-            type="number"
-            style={{ marginTop: 0 }}
-            className={`${styles.innForm__input} ${styles.innForm__input_range}`}
-            min="1900"
-            max="2099"
-            step="1"
-            placeholder="Дата начала"
-          ></input>
-          <input
-            type="number"
-            style={{ marginTop: 0 }}
-            className={`${styles.innForm__input} ${styles.innForm__input_range}`}
-            min="1900"
-            max="2099"
-            step="1"
-            placeholder="Дата конца"
-          ></input>
+          <div className={styles.innForm__range}>
+            <input
+              type="number"
+              style={{ marginTop: 0 }}
+              className={`${styles.innForm__input} ${styles.innForm__input_range}`}
+              min="1900"
+              max="2099"
+              step="1"
+              placeholder="Дата начала"
+            ></input>
+            <input
+              type="number"
+              style={{ marginTop: 0 }}
+              className={`${styles.innForm__input} ${styles.innForm__input_range}`}
+              min="1900"
+              max="2099"
+              step="1"
+              placeholder="Дата конца"
+            ></input>
+          </div>
           <div className={styles.innForm__btn_wrapper}>
             <Button title={"Поиск"} className={styles.innForm__btn} />
             <span className={styles.innForm__require}>
