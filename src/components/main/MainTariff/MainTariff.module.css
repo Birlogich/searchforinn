@@ -1,0 +1,36 @@
+.maintariff {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   text-align: left;
+}
+
+.mainTariff__text {
+   font-family: "Ferry";
+   font-size: 45px;
+   max-width: 700px;
+   margin-bottom: 70px;
+}
+
+.maintariff__row {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+
+@media (max-width: 900px) {
+   .maintariff__row {
+      justify-content: center;
+   }
+}
+
+@media (max-width: 768px) {
+   .maintariff__row {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+}
+

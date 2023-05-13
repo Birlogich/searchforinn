@@ -1,0 +1,138 @@
+.innForm {
+   display: flex;
+   max-width: 872px;
+   width: 100%;
+   padding: 29px 39px 32px 44px;
+   background: #FFFFFF;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   flex-direction: column;
+   min-height: 375px;
+}
+
+.innForm__row {
+   display: flex;
+   justify-content: space-between;
+}
+
+.innForm__column {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 100%;
+}
+
+.innForm__label {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+   font-family: 'Inter';
+   font-size: 18px;
+   line-height: 22px;
+   letter-spacing: 0.03em;
+   color: #000000;
+   margin-bottom: 20px;
+   width: 100%;
+}
+
+.innForm__input::placeholder {
+   font-family: 'Inter';
+   font-size: 14px;
+   line-height: 17px;
+   letter-spacing: 0.03em;
+   color: #949494;
+   opacity: 0.4;
+   text-align: center;
+}
+
+.innForm__input {
+   height: 43px;
+   width: 100%;
+   max-width: 242px;
+   background: #FFFFFF;
+   border: 1px solid #C7C7C7;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+   border-radius: 5px;
+   margin-top: 20px;
+   text-align: center;
+   font-family: 'Inter';
+}
+
+.innForm__input_tone {
+   max-width: 242px;
+   padding-left: 22px;
+}
+
+.innForm__input_range {
+   max-width: 176px;  
+}
+
+.innForm__option {
+   width: 100%;
+}
+
+.innForm__btn_wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 100%;
+}
+
+.innForm__btn {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-size: 22px;
+   line-height: 27px;
+   letter-spacing: 0.03em;
+   color: #FFFFFF;
+   padding: 16px 117px;
+   opacity: 0.6;
+   background: #5970FF;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+.innForm__require {
+   font-family: 'Inter';
+   font-size: 14px;
+   line-height: 17px;
+   letter-spacing: 0.03em;
+   color: #949494;
+}
+
+.innForm__label_check {
+   font-family: 'Inter';
+   font-size: 18px;
+   line-height: 22px;
+   letter-spacing: 0.03em;
+   color: #000000;   
+   margin-bottom: 15px;
+}
+
+.innForm__checkbox {
+   margin-right: 17px;
+}
+
+@media (max-width:900px) {
+   .innForm__column:last-child {
+      display: none;
+   }
+   .innForm__input {
+      max-width: none;
+   }
+   .innForm__input_tone {
+      max-width: none;  
+   }
+   .innForm__row_footer {
+      flex-direction: column;
+   }
+   .innForm__input_range {
+      margin-bottom: 20px;
+   }
+   .innForm__btn {
+      width: 100%;
+   }
+   .innForm__label {
+      font-size: 16px;
+   }
+}

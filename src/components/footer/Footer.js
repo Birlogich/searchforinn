@@ -3,31 +3,12 @@ import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <div
-      style={{
-        background: "#029491",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1440px",
-          display: "flex",
-          justifyContent: "space-between",
-          height: "137px",
-          padding: "25px 60px",
-          margin: "0 auto",
-        }}
-      >
+    <div className={styles.footer__wrapper}>
+      <div className={styles.footer__row}>
         <button>
           <Logo />
         </button>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-          }}
-        >
+        <div className={styles.footer__copyrigth}>
           <p className={styles.footer__adress} style={{ marginBottom: "21px" }}>
             г. Москва, Цветной б-р, 40 <br /> +7 495 771 21 11 <br />{" "}
             info@skan.ru

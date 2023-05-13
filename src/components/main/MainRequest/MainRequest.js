@@ -1,68 +1,22 @@
 import { Button } from "../../../UI/Button";
+import styles from "./MainRequest.module.css";
 
 export const MainRequest = () => {
   return (
-    <div style={{ position: "relative", zIndex: 10 }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          textAlign: "left",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "Ferry",
-              fontSize: "60px",
-              maxWidth: "740px",
-              marginBottom: "20px",
-            }}
-          >
+    <div className={styles.mainrequest}>
+      <div className={styles.mainrequest__textwrapper}>
+        <div className={styles.mainrequest__text}>
+          <p className={styles.mainrequest__textservice}>
             сервис по поиску публикаций о компании по его ИНН
           </p>
-          <p
-            style={{
-              fontFamily: "Inter",
-              fontSize: "20px",
-              maxWidth: "543px",
-              marginBottom: "70px",
-            }}
-          >
+          <p className={styles.mainrequest__textsanalyze}>
             Комплексный анализ публикаций, получение данных в формате PDF на
             электронную почту.
           </p>
         </div>
-        <Button
-          title="Запросить данные"
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 500,
-            fontSize: "22px",
-            lineHeight: "27px",
-            letterSpacing: "0.01em",
-            backgroundColor: "#5970FF",
-            color: "#FFFFFF",
-            padding: "18px 64px",
-            borderRadius: "5px",
-          }}
-        />
+        <Button className={styles.mainrequest__btn} title="Запросить данные" />
       </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          right: "-20px",
-          zIndex: -1,
-          maxWidth: "629px",
-        }}
-      >
+      <div className={styles.mainrequest__img}>
         <img
           src={require("../../../assets/images/main.png")}
           alt="logo"

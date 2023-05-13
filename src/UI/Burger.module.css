@@ -1,0 +1,32 @@
+.burger {
+   height: 50px;
+   width: 50px;
+}
+
+.burger span {
+   position: relative;
+   width: 30px;
+   height: 5px;
+   background-color: #029491;
+   display: block;
+}
+
+.burger span:before {
+   content: '';
+   position: absolute;
+   width: 30px;
+   height: 5px;
+   background-color: #029491;
+   top: 10px;
+   left: 0px;
+}
+
+.burger span:after {
+   position: absolute;
+   content: '';
+   width: 30px;
+   height: 5px;
+   background-color: #029491;
+   top: -10px;
+   left: 0px;
+}

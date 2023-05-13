@@ -1,0 +1,102 @@
+.search__column {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.search__column:first-child {
+   margin-right: 80px;
+}
+
+.search__column:last-child {
+   justify-content: flex-end;
+   position: relative;
+}
+
+
+.search__title {
+   font-family: 'Ferry';
+   font-weight: 900;
+   font-size: 40px;
+   line-height: 48px;
+   letter-spacing: 0.03em;
+   color: #000000;
+   margin-bottom: 25px;
+   text-align: left;
+   max-width: 750px;
+}
+
+.search__subtitle {
+   font-family: 'Inter';
+   font-size: 20px;
+   line-height: 24px;
+   letter-spacing: 0.02em;
+   color: #000000;
+   margin-bottom: 47px;
+   max-width: 500px;
+   text-align: left;
+}
+
+.search__row {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 64px;
+}
+
+.search__texts {
+   position: relative;
+}
+
+.search__document {
+   position: absolute;
+   top: 25%;
+   right: -20%;
+}
+
+.search__folders {
+   position: absolute;
+   top: 10%;
+   right: 25%;
+}
+
+@media (max-width:900px) {
+   .search__row {
+      flex-direction: column;
+      margin-bottom: 25px;
+   }
+   .search__folders {
+      display: none;
+   }
+   .search__document {
+      right: -15%;
+      width: 58px;
+      height: 71px;
+      top: 35%;
+   }
+   .search__column:first-child {
+      margin: 0 -20px;
+   }
+   .search__column:last-child {
+      margin: 0px;
+   }
+   .search__title {
+      font-size: 28px;
+      line-height: 34px;
+      letter-spacing: 0.01em;
+      max-width: 300px;
+   }
+   .search__subtitle {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 260px;
+   }
+   .search__manWith {
+      width: 350px;
+      height: 403px;
+      margin-left: 30px;
+   }
+   .search__texts {
+      margin-left: 20px;
+   }
+}

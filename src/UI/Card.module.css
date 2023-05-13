@@ -9,6 +9,7 @@
    border: 2px solid #FFB64F;
    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
    border-radius: 10px;
+   min-width: 335px;
    margin-bottom: 30px;
 }
 
@@ -20,7 +21,7 @@
    justify-content: space-between;
    padding: 30px 30px 24px 30px;
    text-align: left;
-   margin-bottom: 15px;
+   margin-bottom: 33px;
 }
 
 .cardHeaderTitle {
@@ -49,7 +50,7 @@
    display: flex;
    flex-direction: column;
    position: relative;
-   margin-bottom: 90px;
+   margin-bottom: 60px;
 }
 
 .cardBodyPriceCurrent {
@@ -136,16 +137,19 @@ line-height: 22px;
    max-width: 355px;
 }
 
-
 @media (max-width: 768px) {
    .card {
-      height: 298px;
-      height: 188px;
+      width: 298px;
+      height: 512px;
+      margin-bottom: 43px;
    } 
+   .card:last-child {
+      margin-bottom: 0;
+   }
    .cardBodyTariffTitle {
       font-size: 18px;
    }
-   .cardBodyTariffPronsLast {
+   .cardBodyTariffProns {
       font-size: 16px;
    }
    .cardBodyPrice {
@@ -153,6 +157,15 @@ line-height: 22px;
    }
    .cardBodyTariff {
       margin-bottom: 37px;
+   }
+   .cardHeaderTitle {
+      font-size: 20px;
+   }
+   .cardHeader {
+      margin-bottom: 0;
+   }
+   .cardBodyPriceCurrent {
+      display: none;
    }
 }
 

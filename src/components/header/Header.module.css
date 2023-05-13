@@ -1,12 +1,25 @@
-.header {
+.header__wrapper {
    height: 93px;
-   width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
    margin-bottom: 45px;
+   position : relative;
 }
 
+.header {
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   position: relative;
+}
+.header__links {
+   max-width: 236px;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
 .header__link {
    font-family: 'Inter';
    font-weight: 400;
@@ -16,12 +29,116 @@
    color: var(--black);
    font-size: var(--general-text);
    padding: 25px 0;
- }
- 
- .header__button {
+}
+.header__login {
+   display: flex;
+   align-items: center;
+}
+.header__button {
    background: #7CE3E1;
    border-radius: 5px;
    margin-left: 20px;
    padding: 5px 10px;
    font-weight: 500;
-  }
+}
+.header__link_reg {
+   opacity: 0.4;
+   margin-right: 20px;
+}
+.header__link_login {
+   background: #029491;
+   opacity: 0.6;
+   transform: matrix(-1, 0, 0, 1, 0, 0);
+   display: block;
+   width: 2px;
+   height: 26px;
+   padding: 0;
+}
+
+.header__logo {
+   width: 141px;
+   height: 141px;
+   object-fit: contain;
+}
+
+.header__mobile {
+   display: flex;
+   width: 100%;
+   height: 93px;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header__column_close {
+   position: absolute;
+   top: 10%;
+   right: 10%;
+}
+
+
+@media (max-width: 768px) {
+   .header__wrapper {
+      justify-content: space-between;
+      align-items: center;
+   }
+   .header {
+      transform: translateY(-100%);
+      position: fixed;
+      height: 100%;
+   }
+   .header__links,
+   .header__login {
+      flex-direction: column;
+   }
+   .header__logo {
+      width: 91px;
+      height: 91px;
+   }
+   .header__column {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      position : fixed;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 11;
+      align-items: center;
+      top: 0;
+      left: 0;
+      text-align: center;
+      font-size: 25px;
+      transform: translateY(-100%);
+      transition: 0.4s;
+   }
+   .header__column_open {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      position : fixed;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 11;
+      align-items: center;
+      top: 0;
+      left: 0;
+      text-align: center;
+      font-size: 25px;
+      transform: translateY(0%);
+      transition: 0.4s;
+   }
+   .header__link_login {
+      display: none;
+   }
+   .header__link_reg {
+      margin-bottom: 25px;
+      margin-right: 0;
+   }
+   .header__button {
+      margin-left: 0;
+   }
+   .header__link {
+      font-size: 25px;
+   }
+}

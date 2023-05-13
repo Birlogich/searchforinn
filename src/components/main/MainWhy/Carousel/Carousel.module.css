@@ -1,0 +1,45 @@
+.carousel__row {
+   display: flex;
+   position: relative;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 34px 70px 34px;
+   flex-wrap: wrap;
+   max-width: 1300px;
+}
+
+.carousel__arr_left,
+.carousel__arr_right {
+   position: absolute;
+   opacity: 0.2;
+   width: 39px;
+   height: 39px;
+}
+
+.carousel__arr_left {
+   top: 50%;
+   left: -40px;
+   transform: translateY(-50%);
+}
+
+.carousel__arr_right {
+   top: 50%;
+   right: -40px;
+   transform: translateY(-50%);
+}
+
+
+@media (max-width: 790px) {
+   .carousel__row {
+      margin: 0 0 43px 0;
+   }
+   .swiper-slide {
+      margin-left: 10px;
+   }
+   .carousel__arr_left {
+      left: -15px;
+   }
+   .carousel__arr_right {
+      right: -15px;
+   }
+}

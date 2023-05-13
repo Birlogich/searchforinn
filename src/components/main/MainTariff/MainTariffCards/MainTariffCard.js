@@ -1,6 +1,7 @@
 import { ReactComponent as Lamp } from "../../../../assets/images/lamp.svg";
 import styles from "./MainTariffCard.module.css";
 import { BsCheck } from "react-icons/bs";
+import { Button } from "../../../../UI/Button";
 
 export const MainTariffCard = () => {
   return (
@@ -29,9 +30,14 @@ export const MainTariffCard = () => {
             <BsCheck className={styles.cardBodyIcon} /> Безлимитная история
             запросов
           </p>
-          <p className={styles.cardBodyTariffProns}>Безопасная сделка</p>
-          <p className={styles.cardBodyTariffPronsLast}>Поддержка 24/7</p>
+          <p className={styles.cardBodyTariffProns}>
+            <BsCheck className={styles.cardBodyIcon} /> Безопасная сделка
+          </p>
+          <p className={styles.cardBodyTariffPronsLast}>
+            <BsCheck className={styles.cardBodyIcon} /> Поддержка 24/7
+          </p>
         </div>
+        <Button title={"Перейти в личный кабинет"} className={styles.cardBtn} />
       </div>
     </div>
   );
