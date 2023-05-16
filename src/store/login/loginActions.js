@@ -1,7 +1,6 @@
 export const LOGIN_USER = "LOGIN_USER";
 
-export const loginUser = (login, password) => ({
+export const loginUser = (obj) => ({
   type: LOGIN_USER,
-  login,
-  password,
+  obj,
 });

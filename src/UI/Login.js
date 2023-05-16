@@ -10,14 +10,6 @@ import { ReactComponent as Lock } from "../assets/images/lock.svg";
 
 export const Login = () => {
   const dispatch = useDispatch();
-
-  const hadnleRegisterState = () => {
-    setIsLogin(false);
-  };
-
-  const hadnleLoginState = () => {
-    setIsLogin(true);
-  };
   //Специально так захардкодил, все равно только один логин и пароль подходят
 
   const regexPhone = new RegExp("sf_student1");
@@ -30,7 +22,7 @@ export const Login = () => {
     password: false,
   });
 
-  /*   const handleMatch = (str, regExp, e) => {
+  const handleMatch = (str, regExp, e) => {
     const trueValue = { ...isMatch, [e.target.name]: true };
     const falseValue = { ...isMatch, [e.target.name]: false };
     if (str.length > 4) {
@@ -44,8 +36,22 @@ export const Login = () => {
     }
   };
 
+  const hadnleRegisterState = () => {
+    setIsLogin(false);
+  };
+
+  const hadnleLoginState = () => {
+    setIsLogin(true);
+  };
+
+  const [user, setUser] = useState({
+    login: "",
+    password: "",
+  });
+
   const handleChange = (e) => {
     const newUser = { ...user, [e.target.name]: e.target.value.trim() };
+    setUser(newUser);
 
     if (e.target.name === "login") {
       handleMatch(e.target.value.trim(), regexPhone, e);
@@ -53,7 +59,7 @@ export const Login = () => {
     if (e.target.name === "password") {
       handleMatch(e.target.value.trim(), regexPassword, e);
     }
-  }; */
+  };
 
   /*   const getUser = (e) => {
     e.preventDefault();
@@ -73,10 +79,13 @@ export const Login = () => {
         localStorage.setItem("accessToken", accessToken);
         localStorage.setItem("expire", expire);
       });
-  }; */
-
+  };
+ */
   return (
-    <form className={styles.login__form} /* onSubmit={(e) => getUser(e)} */>
+    <form
+      className={styles.login__form}
+      onSubmit={() => dispatch(loginUser(user))}
+    >
       <Lock className={styles.login__lock} />
       <div className={styles.login__header}>
         <button
@@ -106,7 +115,7 @@ export const Login = () => {
                 ? `${styles.login__input}`
                 : `${styles.login__input} ${styles.login__input_false}`
             }
-            onChange={() => dispatch(loginUser(user.login))}
+            onChange={handleChange}
           ></input>
           {!isMatch.login ? (
             <p className={styles.login__error}>Введите корректные данные</p>
@@ -123,7 +132,7 @@ export const Login = () => {
                 ? `${styles.login__input}`
                 : `${styles.login__input} ${styles.login__input_false}`
             }
-            onChange={() => dispatch(loginUser(user.password))}
+            onChange={handleChange}
           ></input>
           {!isMatch.password ? (
             <p className={styles.login__error}>Неправильный пароль</p>
