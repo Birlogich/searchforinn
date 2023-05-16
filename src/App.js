@@ -16,6 +16,24 @@ function App() {
 
   console.log(GetUserData());
 
+  const requestLoginUser = () => {
+    fetch("https://gateway.scan-interfax.ru/api/v1/account/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(GetUserData()),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        const { accessToken, expire } = json;
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("expire", expire);
+      });
+  };
+
+  requestLoginUser();
+
   return (
     <BrowserRouter>
       <div className="App">

@@ -61,31 +61,13 @@ export const Login = () => {
     }
   };
 
-  /*   const getUser = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://gateway.scan-interfax.ru/api/v1/account/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        login: user.login,
-        password: user.password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        const { accessToken, expire } = json;
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("expire", expire);
-      });
+    dispatch(loginUser(user.login, user.password));
   };
- */
+
   return (
-    <form
-      className={styles.login__form}
-      onSubmit={() => dispatch(loginUser(user))}
-    >
+    <form className={styles.login__form} onSubmit={handleSubmit}>
       <Lock className={styles.login__lock} />
       <div className={styles.login__header}>
         <button
