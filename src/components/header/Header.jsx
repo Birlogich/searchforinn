@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { Burger } from "../../UI/Burger";
@@ -25,10 +26,12 @@ export const Header = () => {
   };
 
   return (
-    <>
+    <div className="container">
       {windowWidth <= 768 ? (
-        <div className={styles.header__mobile}>
-          <Logo className={styles.header__logo} />
+        <nav className={styles.header__mobile}>
+          <Link to="/" className={styles.header__link}>
+            <Logo className={styles.header__logo} />
+          </Link>
           <Burger className={styles.header__burger} onClick={menuOpen} />
           <div
             className={
@@ -42,37 +45,57 @@ export const Header = () => {
                 onClick={menuСlose}
               />
             </button>
-            <button className={styles.header__link}>Главная</button>
-            <button className={styles.header__link}>Тарифы</button>
-            <button className={styles.header__link}>FAQ</button>
-            <button className={styles.header__link_reg}>
+            <Link to="/" className={styles.header__link}>
+              Главная
+            </Link>
+            <Link to="*" className={styles.header__link}>
+              Тарифы
+            </Link>
+            <Link to="*" className={styles.header__link}>
+              FAQ
+            </Link>
+            <Link to="*" className={styles.header__link_reg}>
               Зарегистрироваться
-            </button>
+            </Link>
             <div className={styles.header__link_login}></div>
-            <button className={(styles.header__link, styles.header__button)}>
+            <Link
+              to="autorization"
+              className={(styles.header__link, styles.header__button)}
+            >
               Войти
-            </button>
+            </Link>
           </div>
-        </div>
+        </nav>
       ) : (
-        <div className={styles.header__wrapper}>
-          <Logo className={styles.header__logo} />
+        <nav className={styles.header__wrapper}>
+          <Link to="/" className={styles.header__link}>
+            <Logo className={styles.header__logo} />
+          </Link>
           <div className={styles.header__links}>
-            <button className={styles.header__link}>Главная</button>
-            <button className={styles.header__link}>Тарифы</button>
-            <button className={styles.header__link}>FAQ</button>
+            <Link to="/" className={styles.header__link}>
+              Главная
+            </Link>
+            <Link to="*" className={styles.header__link}>
+              Тарифы
+            </Link>
+            <Link to="*" className={styles.header__link}>
+              FAQ
+            </Link>
           </div>
           <div className={styles.header__login}>
-            <button className={styles.header__link_reg}>
+            <Link to="*" className={styles.header__link_reg}>
               Зарегистрироваться
-            </button>
+            </Link>
             <div className={styles.header__link_login}></div>
-            <button className={(styles.header__link, styles.header__button)}>
+            <Link
+              to="autorization"
+              className={(styles.header__link, styles.header__button)}
+            >
               Войти
-            </button>
+            </Link>
           </div>
-        </div>
+        </nav>
       )}
-    </>
+    </div>
   );
 };

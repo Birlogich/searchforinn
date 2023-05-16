@@ -1,6 +1,7 @@
 .autorization__row {
    display: flex;
    justify-content: space-between;
+   margin-bottom: 80px;
 }
 
 .autorization__title {

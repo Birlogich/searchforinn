@@ -1,4 +1,4 @@
-import { Button } from "../../../UI/Button";
+import { Link } from "react-router-dom";
 import styles from "./MainRequest.module.css";
 
 export const MainRequest = () => {
@@ -14,7 +14,9 @@ export const MainRequest = () => {
             электронную почту.
           </p>
         </div>
-        <Button className={styles.mainrequest__btn} title="Запросить данные" />
+        <Link to="search" className={styles.mainrequest__btn}>
+          Запросить данные
+        </Link>
       </div>
       <div className={styles.mainrequest__img}>
         <img

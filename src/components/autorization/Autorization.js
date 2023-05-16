@@ -13,7 +13,7 @@ export const Autorization = () => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       {windowWidth >= 1060 ? (
         <div className={styles.autorization__row}>
           <div className={styles.autorization__column}>
@@ -43,6 +43,6 @@ export const Autorization = () => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };

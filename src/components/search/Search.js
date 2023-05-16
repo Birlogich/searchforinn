@@ -6,23 +6,25 @@ import { ReactComponent as ManWithRocket } from "../../assets/images/manwithrock
 
 export const Search = () => {
   return (
-    <div className={styles.search__row}>
-      <div className={styles.search__column}>
-        <div className={styles.search__texts}>
-          <p className={styles.search__title}>
-            Найдите необходимые данные в пару кликов.
-          </p>
-          <p className={styles.search__subtitle}>
-            Задайте параметры поиска.
-            <br /> Чем больше заполните, тем точнее поиск
-          </p>
-          <Document className={styles.search__document} />
+    <div className="container">
+      <div className={styles.search__row}>
+        <div className={styles.search__column}>
+          <div className={styles.search__texts}>
+            <p className={styles.search__title}>
+              Найдите необходимые данные в пару кликов.
+            </p>
+            <p className={styles.search__subtitle}>
+              Задайте параметры поиска.
+              <br /> Чем больше заполните, тем точнее поиск
+            </p>
+            <Document className={styles.search__document} />
+          </div>
+          <SearchInn />
         </div>
-        <SearchInn />
-      </div>
-      <div className={styles.search__column}>
-        <Folders className={styles.search__folders} />
-        <ManWithRocket className={styles.search__manWith} />
+        <div className={styles.search__column}>
+          <Folders className={styles.search__folders} />
+          <ManWithRocket className={styles.search__manWith} />
+        </div>
       </div>
     </div>
   );

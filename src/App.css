@@ -57,6 +57,10 @@ ol[class] {
   list-style: none;
 }
 
+a {
+  text-decoration : none;
+}
+
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -78,7 +82,6 @@ select {
 
 input[type=text] {
   outline:none;
-  padding:0;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */

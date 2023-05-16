@@ -6,18 +6,20 @@ import styles from "./Main.module.css";
 
 export const Main = () => {
   return (
-    <>
-      <MainRequest />
-      <MainWhy />
-      <Carousel />
-      <div className={styles.main__img}>
-        <img
-          src={require("../../assets/images/man.png")}
-          alt="man"
-          style={{ marginBottom: "105px" }}
-        />
+    <div className="container">
+      <div className={styles.main__wrapper}>
+        <MainRequest />
+        <MainWhy />
+        <Carousel />
+        <div className={styles.main__img}>
+          <img
+            src={require("../../assets/images/man.png")}
+            alt="man"
+            style={{ marginBottom: "105px" }}
+          />
+        </div>
+        <MainTariff />
       </div>
-      <MainTariff />
-    </>
+    </div>
   );
 };

@@ -1,23 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { Header } from "./components/header/Header";
-import { Footer } from "./components/footer/Footer";
 import { Main } from "./components/main/Main";
+import { MainLayout } from "./layout/MainLayout";
 import { Autorization } from "./components/autorization/Autorization";
 import { Search } from "./components/search/Search";
+import { NotFound } from "./components/notFound/notFound";
+import { GetUserData } from "./store/login/loginSelector";
 import "./App.css";
 
 function App() {
+  const accessToken = localStorage.getItem("accessToken");
+  const expire = localStorage.getItem("expire");
+  const date = new Date(expire);
+
+  console.log(GetUserData());
+
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route element={<Header />} />
-          <Route path="/" element={<Main />} />
-          <Route path="/autorization" element={<Autorization />} />
-          <Route path="search" element={<Search />} />
-          <Route element={<Footer />} />
-          <Route path="*" element={<h1>NOT FOUND</h1>} />
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Main />} />
+            <Route path="autorization" element={<Autorization />} />
+            <Route path="search" element={<Search />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
