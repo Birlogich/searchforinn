@@ -18,8 +18,8 @@ export const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const [isMatch, setIsMatch] = useState({
-    login: false,
-    password: false,
+    login: undefined,
+    password: undefined,
   });
 
   const handleMatch = (str, regExp, e) => {
@@ -93,13 +93,13 @@ export const Login = () => {
             value={user.login}
             name="login"
             className={
-              isMatch.login
+              isMatch.login !== false
                 ? `${styles.login__input}`
                 : `${styles.login__input} ${styles.login__input_false}`
             }
             onChange={handleChange}
           ></input>
-          {!isMatch.login ? (
+          {isMatch.login === false ? (
             <p className={styles.login__error}>Введите корректные данные</p>
           ) : null}
         </label>
@@ -110,13 +110,13 @@ export const Login = () => {
             value={user.password}
             name="password"
             className={
-              isMatch.password
+              isMatch.password !== false
                 ? `${styles.login__input}`
                 : `${styles.login__input} ${styles.login__input_false}`
             }
             onChange={handleChange}
           ></input>
-          {!isMatch.password ? (
+          {isMatch.password === false ? (
             <p className={styles.login__error}>Неправильный пароль</p>
           ) : null}
         </label>

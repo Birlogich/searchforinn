@@ -1,20 +1,18 @@
+import { useSelector } from "react-redux";
+import { userData } from "./store/login/loginSelector";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Main } from "./components/main/Main";
+import { loadState } from "./store/local-storage";
 import { MainLayout } from "./layout/MainLayout";
 import { Autorization } from "./components/autorization/Autorization";
 import { Search } from "./components/search/Search";
 import { NotFound } from "./components/notFound/notFound";
-import { GetUserData } from "./store/login/loginSelector";
 import "./App.css";
 
 function App() {
-  "https://codesandbox.io/s/react-redux-simpletodos-l1wyy?file=/src/store.js";
+  const getUserData = useSelector(userData);
 
-  const accessToken = localStorage.getItem("accessToken");
-  const expire = localStorage.getItem("expire");
-  const date = new Date(expire);
-
-  console.log(GetUserData());
+  loadState();
 
   const requestLoginUser = () => {
     fetch("https://gateway.scan-interfax.ru/api/v1/account/login", {
@@ -22,7 +20,7 @@ function App() {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(GetUserData()),
+      body: JSON.stringify(getUserData),
     })
       .then((res) => res.json())
       .then((json) => {

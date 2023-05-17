@@ -1,4 +1,4 @@
 import { legacy_createStore as createStore } from "redux";
-import { user } from "./login/loginReducer";
+import { rootReducer } from "./root-reducer";
 
-export const store = createStore(user);
+export const store = createStore(rootReducer);
