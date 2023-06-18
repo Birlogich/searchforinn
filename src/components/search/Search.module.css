@@ -45,6 +45,10 @@
    position: relative;
 }
 
+.search__texts_loaded {
+   margin-bottom: 127px;
+}
+
 .search__document {
    position: absolute;
    top: 25%;
@@ -55,6 +59,20 @@
    position: absolute;
    top: 10%;
    right: 25%;
+}
+
+.search__woman {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.histograms__loadtext {
+   font-family: 'Inter';
+   font-size: 18px;
+   line-height: 22px;
+   letter-spacing: 0.02em;
+   color: #000000;
 }
 
 @media (max-width:900px) {
@@ -95,5 +113,15 @@
    }
    .search__texts {
       margin-left: 20px;
+   }
+}
+
+@media (max-width:375px) {
+   .search__woman {
+      position: relative;
+      width: 350px;
+   }
+   .search__texts_loaded {
+      margin-bottom: 0;
    }
 }

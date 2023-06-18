@@ -1,4 +1,4 @@
-export const loadState = () => {
+/* export const loadState = () => {
   try {
     const savedAccessToken = localStorage.getItem("accessToken");
     const savedExpiredDate = localStorage.getItem("expire");
@@ -7,8 +7,7 @@ export const loadState = () => {
       return undefined;
     }
 
-    console.log(savedAccessToken);
-    console.log(savedDate);
+   return JSON.parse(savedAccessToken,savedDate)
   } catch (error) {
     return undefined;
   }
@@ -16,5 +15,7 @@ export const loadState = () => {
 
 export const saveState = (state) => {
   try {
+    const stateToBeSaved = 
   } catch (error) {}
 };
+ */

@@ -1,5 +1,6 @@
 import styles from "./MainTariff.module.css";
 import { Card } from "../../../UI/Card";
+import { accessToken } from "../../../utils";
 
 export const MainTariff = () => {
   return (
@@ -9,6 +10,7 @@ export const MainTariff = () => {
       </div>
       <div className={styles.maintariff__row}>
         <Card
+          accessToken={accessToken}
           title={"Beginner"}
           textFor={"Для небольшого исследования"}
           currentTariff={"Текущий тариф"}

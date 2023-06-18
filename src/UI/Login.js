@@ -1,19 +1,19 @@
 import { useState } from "react";
+import { registerUser } from "../store/user/userActions";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../store/login/loginActions";
 import { Button } from "./Button";
 import styles from "./Login.module.css";
 import { ReactComponent as Google } from "../assets/images/google.svg";
 import { ReactComponent as Facebook } from "../assets/images/facebook.svg";
 import { ReactComponent as Yandex } from "../assets/images/yandex.svg";
 import { ReactComponent as Lock } from "../assets/images/lock.svg";
+import { regexPhone, regexPassword } from "../utils";
+import { handleMatch } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const dispatch = useDispatch();
-  //Специально так захардкодил, все равно только один логин и пароль подходят
-
-  const regexPhone = new RegExp("sf_student1");
-  const regexPassword = new RegExp("4i2385j");
+  const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(true);
 
@@ -21,20 +21,6 @@ export const Login = () => {
     login: undefined,
     password: undefined,
   });
-
-  const handleMatch = (str, regExp, e) => {
-    const trueValue = { ...isMatch, [e.target.name]: true };
-    const falseValue = { ...isMatch, [e.target.name]: false };
-    if (str.length > 4) {
-      if (regExp.test(str)) {
-        setIsMatch(trueValue);
-      } else {
-        setIsMatch(falseValue);
-      }
-    } else {
-      setIsMatch(falseValue);
-    }
-  };
 
   const hadnleRegisterState = () => {
     setIsLogin(false);
@@ -54,16 +40,17 @@ export const Login = () => {
     setUser(newUser);
 
     if (e.target.name === "login") {
-      handleMatch(e.target.value.trim(), regexPhone, e);
+      handleMatch(e.target.value.trim(), regexPhone, e, isMatch, setIsMatch);
     }
     if (e.target.name === "password") {
-      handleMatch(e.target.value.trim(), regexPassword, e);
+      handleMatch(e.target.value.trim(), regexPassword, e, isMatch, setIsMatch);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(user.login, user.password));
+    dispatch(registerUser(user.login, user.password));
+    navigate("..", { relative: "path" });
   };
 
   return (

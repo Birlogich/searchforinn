@@ -1,0 +1,120 @@
+.histograms__row {
+   display: flex;
+   position: relative;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   max-width: 1300px;
+   width: 100%;
+}
+
+.histograms__wrapper {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.histograms__title {
+   font-family: 'Ferry';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 30px;
+   line-height: 36px;
+   letter-spacing: 0.02em;
+   color: #000000;
+   margin-bottom: 17px;
+   margin-top: 15px;
+}
+
+.histograms__subtitle {
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 22px;
+   letter-spacing: 0.02em;
+   color: #949494;
+   margin-bottom: 27px;
+}
+
+.histograms__swiper {
+   background: #FFFFFF;
+   border: 2px solid #029491;
+   border-radius: 10px;
+   height: 158px;
+   width: 100%;
+   display: flex;
+   padding: 0;
+}
+.histograms__slide {
+   display: flex;
+   flex-direction: column;
+   width: 131px;
+   border-right: 1px solid #949494;
+   padding: 18px 20px 22px 20px;
+}
+
+.histograms__swiper_leftcolumn {
+   background: #029491;
+   border-radius: 10px 0px 0px 10px;
+   font-family: 'Inter';
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 24px;
+   letter-spacing: 0.02em;
+   padding: 18px 20px 22px 20px;
+   color: #FFFFFF;
+}
+
+.histograms__swiper_leftcolumn p{
+   margin-bottom: 26px;
+}
+
+.histograms__arr_left,
+.histograms__arr_right {
+   position: absolute;
+   opacity: 0.2;
+   width: 39px;
+   height: 39px;
+}
+
+.histograms__arr_left {
+   top: 50%;
+   left: -40px;
+   transform: translateY(-50%);
+}
+
+.histograms__arr_right {
+   top: 50%;
+   right: -40px;
+   transform: translateY(-50%);
+}
+
+.histograms__info {
+   font-family: 'Inter';
+   font-size: 18px;
+   line-height: 22px;
+   letter-spacing: 0.02em;
+   color: #000000;
+   margin-bottom: 29px;
+}
+
+.histograms__info:last-child {
+   margin-bottom: 0px;
+}
+
+@media (max-width: 790px) {
+   .histograms__row {
+      margin: 0 0 43px 0;
+   }
+   .swiper-slide {
+      margin-left: 10px;
+   }
+   .histograms__arr_left {
+      left: -15px;
+   }
+   .histograms__arr_right {
+      right: -15px;
+   }
+}

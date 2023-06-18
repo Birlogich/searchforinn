@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 
-import { user } from "./login/loginReducer";
+import { userReducer } from "./user/userReducer";
+import { histogramsReducer } from "./companies/companiesReducer";
+import { postsReducer } from "./posts/postsReducer";
 
 export const rootReducer = combineReducers({
-  user,
+  user: userReducer,
+  histograms: histogramsReducer,
+  posts: postsReducer,
 });

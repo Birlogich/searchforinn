@@ -58,6 +58,20 @@
    font-family: 'Inter';
 }
 
+.innForm__input_false {
+   height: 43px;
+   width: 100%;
+   max-width: 242px;
+   background: #FFFFFF;
+   border: 1px solid #FF5959;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+   border-radius: 5px;
+   margin-top: 20px;
+   text-align: center;
+   font-family: 'Inter';
+}
+
+
 .innForm__input_tone {
    max-width: 242px;
    padding-left: 22px;
@@ -74,6 +88,7 @@
    max-width: 376px;
    justify-content: space-between;
    margin-right: 112px;
+   flex-direction : column;
 }
 
 .innForm__input_range {
@@ -111,6 +126,10 @@
    max-width: 305px;
 }
 
+.innForm__btn:disabled {
+   background: #FF5959;
+}
+
 .innForm__require {
    font-family: 'Inter';
    font-size: 14px;
@@ -130,6 +149,15 @@
 
 .innForm__checkbox {
    margin-right: 17px;
+}
+
+.searchinn__error {
+   font-family: 'Inter';
+   text-align: center;
+   font-size: 14px;
+   line-height: 17px;
+   letter-spacing: 0.01em;
+   color: #FF5959;
 }
 
 @media (max-width:900px) {
@@ -155,3 +183,12 @@
       font-size: 16px;
    }
 }
+
+::-webkit-calendar-picker-indicator {  
+   margin-top: 8px;  
+   margin-right: 11px;
+   width: 0;
+   height: 0;
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
+   border-top: 10px solid #D9D9D9; }

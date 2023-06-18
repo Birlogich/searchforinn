@@ -3,7 +3,7 @@ export const NotFound = () => {
     <img
       src={require("../../assets/images/pagenotfound.avif")}
       alt="notFound"
-      style={{ objectFit: "contain" }}
+      style={{ objectFit: "contain", flex: "1 1 auto" }}
     />
   );
 };

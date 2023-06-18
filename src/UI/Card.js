@@ -15,6 +15,7 @@ export const Card = ({
   option2,
   option3,
   btnText,
+  accessToken,
 }) => {
   return (
     <div className={styles.card}>
@@ -27,7 +28,9 @@ export const Card = ({
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardBodyPrice}>
-          <span className={styles.cardBodyPriceCurrent}>{currentTariff}</span>
+          {accessToken ? (
+            <span className={styles.cardBodyPriceCurrent}>{currentTariff}</span>
+          ) : null}
           <div className={styles.CardBodyPrice}>
             <span className={styles.CardBodyPriceNew}>{price}</span>
             <span className={styles.CardBodyPriceOld}>{oldPrice}</span>
