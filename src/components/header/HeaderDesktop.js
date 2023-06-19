@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { userData } from "../../store/user/userSelector";
 import { Link, useNavigate } from "react-router-dom";
 import { Preloader } from "konsta/react";
@@ -7,6 +7,10 @@ import styles from "./Header.module.css";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 export const HeaderDesktop = () => {
+  const [userInfo, setUserInfo] = useState({
+    stateUsedCompanyCount: undefined,
+    stateCompanyLimit: undefined,
+  });
   const accessToken = localStorage.getItem("accessToken");
   const usedCompanyCount = localStorage.getItem("usedCompanyCount");
   const companyLimit = localStorage.getItem("companyLimit");
@@ -17,6 +21,13 @@ export const HeaderDesktop = () => {
     localStorage.removeItem("accessToken");
     navigate("..", { relative: "path" });
   };
+
+  useEffect(() => {
+    setUserInfo({
+      stateUsedCompanyCount: usedCompanyCount,
+      stateCompanyLimit: companyLimit,
+    });
+  }, [usedCompanyCount, companyLimit, accessToken]);
 
   return (
     <nav className={styles.header__wrapper}>
@@ -48,13 +59,13 @@ export const HeaderDesktop = () => {
               <p className={styles.header__statistics_text}>
                 Использовано компаний{" "}
                 <span className={styles.header__statistics_used}>
-                  {usedCompanyCount}
+                  {userInfo.stateUsedCompanyCount}
                 </span>
               </p>
               <p className={styles.header__statistics_text}>
                 Лимит по компаниям{" "}
                 <span className={styles.header__statistics_limit}>
-                  {companyLimit}
+                  {userInfo.stateCompanyLimit}
                 </span>
               </p>
             </div>

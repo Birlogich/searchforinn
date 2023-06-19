@@ -4,7 +4,7 @@ import styles from "./Posts.module.css";
 import { Post } from "./Post";
 
 export const Posts = ({ posts }) => {
-  let count = 0;
+  const [count, setCount] = useState(0);
   const [postsFromServer, setPostsFromServer] = useState(null);
   const [changedPosts, setChangedPosts] = useState(null);
 
@@ -12,10 +12,10 @@ export const Posts = ({ posts }) => {
     setPostsFromServer(posts);
   }, [posts]);
 
-  const getNextPosts = (initialState, startPoint) => {
-    count += 10;
+  const getNextPosts = (initialState, startPoint, count) => {
     const addTenPosts = [...initialState].slice(0, startPoint + count);
     setChangedPosts(addTenPosts);
+    setCount(count);
   };
 
   return (
@@ -33,7 +33,7 @@ export const Posts = ({ posts }) => {
           <Button
             title="Показать больше"
             className={styles.posts__btn}
-            onClick={() => getNextPosts(postsFromServer, 9)}
+            onClick={() => getNextPosts(postsFromServer, 9, count + 10)}
           />
         ) : (
           ""

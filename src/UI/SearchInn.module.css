@@ -85,7 +85,6 @@
 .innForm__range {
    display: flex;
    width: 100%;
-   max-width: 376px;
    justify-content: space-between;
    margin-right: 112px;
    flex-direction : column;
@@ -160,6 +159,11 @@
    color: #FF5959;
 }
 
+.innForm__rangerow {
+   display: flex;
+   width: 100%;
+}
+
 @media (max-width:900px) {
    .innForm__column:last-child {
       display: none;
@@ -175,12 +179,22 @@
    }
    .innForm__input_range {
       margin-bottom: 20px;
+      width: 100%;
+   }
+   .innForm__input_range:first-child {
+      margin-right: 0px;
+   }
+   .innForm__input_range:nth-child(2) {
+      max-width: none;
    }
    .innForm__btn {
       width: 100%;
    }
    .innForm__label {
       font-size: 16px;
+   }
+   .innForm__rangerow {
+      flex-wrap: wrap;
    }
 }
 

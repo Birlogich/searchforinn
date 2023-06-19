@@ -120,6 +120,9 @@ export const SearchInn = () => {
       if (Number(e.target.value) <= 0 || Number(e.target.value) > 1000) {
         const uncorrectLimit = { ...isMatch, [e.target.name]: false };
         setIsMatch(uncorrectLimit);
+      } else {
+        const correctLimit = { ...isMatch, [e.target.name]: true };
+        setIsMatch(correctLimit);
       }
       setIsSearch(newValue);
     }
@@ -137,6 +140,8 @@ export const SearchInn = () => {
             [e.target.name]: IsoDate,
           },
         };
+        const correctStartDate = { ...isMatch, [e.target.name]: true };
+        setIsMatch(correctStartDate);
         setIsSearch(newValue);
       }
     }
@@ -154,6 +159,8 @@ export const SearchInn = () => {
             [e.target.name]: IsoDate,
           },
         };
+        const correctEndDate = { ...isMatch, [e.target.name]: true };
+        setIsMatch(correctEndDate);
         setIsSearch(newValue);
       }
     }
@@ -264,6 +271,11 @@ export const SearchInn = () => {
               name="limit"
               onChange={handleChange}
             ></input>
+            {isMatch.limit === false ? (
+              <p className={styles.searchinn__error}>
+                Введите корректные данные
+              </p>
+            ) : null}
           </label>
         </div>
         <div className={styles.innForm__column}>
@@ -301,7 +313,7 @@ export const SearchInn = () => {
         <label className={styles.innForm__label}>Диапазон поиска*</label>
         <div className={`${styles.innForm__row} ${styles.innForm__row_footer}`}>
           <div className={styles.innForm__range}>
-            <div style={{ display: "flex" }}>
+            <div className={styles.innForm__rangerow}>
               <input
                 onChange={handleChange}
                 type={isType ? "text" : "date"}
@@ -329,7 +341,7 @@ export const SearchInn = () => {
                 name="endDate"
               ></input>
             </div>
-            {isMatch.endDate || isMatch.startDate === false ? (
+            {isMatch.endDate === false || isMatch.startDate === false ? (
               <p className={styles.searchinn__error}>
                 Введите корректные данные
               </p>
@@ -340,14 +352,14 @@ export const SearchInn = () => {
               title="Поиск"
               className={styles.innForm__btn}
               autoFocus={true}
-              /*               disabled={
-                isMatch.endDate &&
-                isMatch.startDate &&
-                isMatch.inn &&
-                isMatch.limit
-                  ? true
+              disabled={
+                isMatch.endDate === true &&
+                isMatch.startDate === true &&
+                isMatch.inn === true &&
+                isMatch.limit === true
+                  ? false
                   : true
-              } */
+              }
             />
             <span className={styles.innForm__require}>
               * Обязательные к заполнению поля

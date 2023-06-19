@@ -17,14 +17,14 @@ export const Histograms = ({
       const totalDocuments = histogramsDataFromServer[0]?.data;
       const riskFactors = histogramsDataFromServer[1]?.data;
 
-      const newRiskFactorObj = riskFactors.map((obj) => {
+      const newRiskFactorObj = riskFactors?.map((obj) => {
         return {
           date: (obj.date = new Date().toLocaleDateString()),
           riskValue: obj.value,
         };
       });
 
-      const result = totalDocuments.map((y) =>
+      const result = totalDocuments?.map((y) =>
         Object.assign(
           y,
           newRiskFactorObj.find((x) => x.id === y.id)
@@ -45,7 +45,7 @@ export const Histograms = ({
       slidesPerView: 4,
       spaceBetween: 30,
     },
-    1024: {
+    1280: {
       slidesPerView: 8,
       spaceBetween: 18,
     },

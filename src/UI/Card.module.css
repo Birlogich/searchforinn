@@ -140,7 +140,6 @@ line-height: 22px;
 @media (max-width: 768px) {
    .card {
       width: 298px;
-      height: 512px;
       margin-bottom: 43px;
    } 
    .card:last-child {

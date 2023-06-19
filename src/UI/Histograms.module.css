@@ -50,7 +50,7 @@
 .histograms__slide {
    display: flex;
    flex-direction: column;
-   width: 131px;
+   max-width: 131px;
    border-right: 1px solid #949494;
    padding: 18px 20px 22px 20px;
 }
@@ -116,5 +116,8 @@
    }
    .histograms__arr_right {
       right: -15px;
+   }
+   .histograms__slide {
+      margin-right: 0;
    }
 }

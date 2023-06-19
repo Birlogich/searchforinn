@@ -108,7 +108,7 @@
       max-width: 260px;
    }
    .search__manWith {
-      width: 350px;
+      max-width: 350px;
       height: 403px;
    }
    .search__texts {

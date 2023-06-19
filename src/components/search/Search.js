@@ -52,7 +52,18 @@ export const Search = () => {
             </div>
             <div className={styles.search__column}>
               <Folders className={styles.search__folders} />
-              <ManWithRocket className={styles.search__manWith} />
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <ManWithRocket
+                  className={styles.search__manWith}
+                  style={{ width: "100%" }}
+                />
+              </div>
             </div>
           </>
         )}

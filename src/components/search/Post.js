@@ -29,7 +29,7 @@ export const Post = ({ post }) => {
         )}
       </div>
       <div className={styles.post__main}>
-        {getImgFromXML(post.ok.content.markup).length > 0 ? (
+        {getImgFromXML(post.ok.content.markup)?.length > 0 ? (
           <img
             src={getImgFromXML(post.ok.content.markup)}
             alt="man"
