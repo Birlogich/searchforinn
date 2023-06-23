@@ -166,6 +166,19 @@
    max-width: 305px;
 }
 
+.btn {
+   font-family: 'Inter';
+   font-weight: 500;
+   font-size: 22px;
+   line-height: 27px;
+   letter-spacing: 0.04em;
+   color: #FFFFFF;
+   background: #5970FF;
+   border-radius: 5px;
+   padding: 16px 49px;
+   max-width: 400px;
+}
+
 @media (max-width:376px) {
 .post__header_text {
    font-size: 14px;

@@ -4,10 +4,11 @@ export const accessToken = localStorage.getItem("accessToken");
 export const expireDate = localStorage.getItem("expire");
 
 //Специально захордкодил под готовые, иначе постоянно лень было вводить
-
-export const regexPhone = new RegExp("sf_student10");
-export const regexPassword = new RegExp("KHKfTXb");
-export const regexInn = new RegExp(/^(\d){1,10}$/g);
+//sf_student10
+export const regexPhone = new RegExp(/^[a-z0-9_-]{6,16}$/);
+//"KHKfTXb"
+export const regexPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z]){6,}/g);
+export const regexInn = new RegExp(/^(\d{10}|\d)$/);
 
 export const handleMatch = (str, regExp, e, initialState, setInitialState) => {
   const trueValue = { ...initialState, [e.target.name]: true };

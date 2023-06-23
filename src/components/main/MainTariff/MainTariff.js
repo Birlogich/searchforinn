@@ -22,32 +22,38 @@ export const MainTariff = () => {
           option2={"Безопасная сделка"}
           option3={"Поддержка 24/7"}
           btnText={"Подробнее"}
+          image={"lamp"}
         />
         <Card
-          title={"Beginner"}
-          textFor={"Для небольшого исследования"}
+          title={"Pro"}
+          textFor={"Для HR и фрилансеров"}
           currentTariff={"Текущий тариф"}
-          price={"799 ₽"}
-          oldPrice={"1 200 ₽"}
-          payment={"или 150 ₽/мес. при рассрочке на 24 мес."}
+          price={"1 299 ₽"}
+          oldPrice={"2 600 ₽"}
+          payment={"или 279 ₽/мес. при рассрочке на 24 мес."}
           includeText={"В тариф входит:"}
-          option1={"Безлимитная история запросов"}
-          option2={"Безопасная сделка"}
-          option3={"Поддержка 24/7"}
+          option1={"Все пункты тарифа Beginner"}
+          option2={"Экспорт истории"}
+          option3={"Рекомендации по приоритетам"}
           btnText={"Подробнее"}
+          bgColor={{ backgroundColor: "#7CE3E1" }}
+          image={"aim"}
         />
         <Card
-          title={"Beginner"}
-          textFor={"Для небольшого исследования"}
+          title={"Business"}
+          textFor={"Для корпоративных клиентов"}
           currentTariff={"Текущий тариф"}
-          price={"799 ₽"}
-          oldPrice={"1 200 ₽"}
+          price={"2 379 ₽"}
+          oldPrice={"3 700 ₽"}
           payment={"или 150 ₽/мес. при рассрочке на 24 мес."}
           includeText={"В тариф входит:"}
-          option1={"Безлимитная история запросов"}
-          option2={"Безопасная сделка"}
-          option3={"Поддержка 24/7"}
+          option1={"Все пункты тарифа Pro"}
+          option2={"Безлимитное количество запросов"}
+          option3={"Приоритетная поддержка"}
           btnText={"Подробнее"}
+          bgColor={{ backgroundColor: "#000000" }}
+          textColor={{ color: "white" }}
+          image={"laptop"}
         />
       </div>
     </>

@@ -1,4 +1,4 @@
-import { ReactComponent as Lamp } from "../assets/images/lamp.svg";
+import { ReactSVG } from "react-svg";
 import { BsCheck } from "react-icons/bs";
 import { Button } from "./Button";
 import styles from "./Card.module.css";
@@ -16,15 +16,24 @@ export const Card = ({
   option3,
   btnText,
   accessToken,
+  bgColor,
+  textColor,
+  image,
 }) => {
   return (
     <div className={styles.card}>
-      <div className={styles.cardHeader}>
+      <div className={styles.cardHeader} style={bgColor}>
         <div>
-          <p className={styles.cardHeaderTitle}>{title}</p>
-          <p className={styles.cardHeaderText}>{textFor}</p>
+          <p className={styles.cardHeaderTitle} style={textColor}>
+            {title}
+          </p>
+          <p className={styles.cardHeaderText} style={textColor}>
+            {textFor}
+          </p>
         </div>
-        <Lamp />
+        <div className={styles.cardHeaderImageWrapper}>
+          <ReactSVG src={require(`../assets/images/${image}.svg`)} />
+        </div>
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardBodyPrice}>

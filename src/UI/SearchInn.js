@@ -27,8 +27,8 @@ export const SearchInn = () => {
 
   const [isSearch, setIsSearch] = useState({
     issueDateInterval: {
-      startDate: "2019-01-01T00:00:00+03:00",
-      endDate: "2022-08-31T23:59:59+03:00",
+      startDate: "",
+      endDate: "",
     },
     searchContext: {
       targetSearchEntitiesContext: {
@@ -37,7 +37,7 @@ export const SearchInn = () => {
             type: "company",
             sparkId: null,
             entityId: null,
-            inn: 7710137066,
+            inn: null, //7710137066
             maxFullness: false,
             inBusinessNews: false,
           },
@@ -74,7 +74,7 @@ export const SearchInn = () => {
       excludeDigests: false,
     },
     similarMode: "duplicates",
-    limit: 1000,
+    limit: 0,
     sortType: "sourceInfluence",
     sortDirectionType: "desc",
     intervalType: "month",

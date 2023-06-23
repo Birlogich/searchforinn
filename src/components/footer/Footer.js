@@ -1,12 +1,15 @@
-import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
     <div className={styles.footer__wrapper}>
       <div className={`${styles.footer__row}`}>
-        <button>
-          <Logo />
+        <button style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src={require("../../assets/images/logofooter.png")}
+            alt="logo"
+            style={{ objectFit: "contain" }}
+          />
         </button>
         <div className={styles.footer__copyrigth}>
           <p className={styles.footer__adress} style={{ marginBottom: "21px" }}>

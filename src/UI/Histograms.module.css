@@ -50,7 +50,6 @@
 .histograms__slide {
    display: flex;
    flex-direction: column;
-   max-width: 131px;
    border-right: 1px solid #949494;
    padding: 18px 20px 22px 20px;
 }

@@ -36,7 +36,15 @@
    font-weight: 400;
    font-size: 18px;
    line-height: 22px;
+   text-wrap: nowrap;
    letter-spacing: 0.01em;
+}
+
+.cardHeaderImageWrapper {
+   display: flex;
+   align-items: center;
+   margin-left: 10px;
+   margin-bottom: 20px;
 }
 
 .cardBody {
@@ -117,6 +125,11 @@ line-height: 22px;
 
 .cardBodyTariffPronsLast {
    margin-bottom: 0;
+   font-size: 18px;
+   line-height: 22px;
+   margin-bottom: 5px;
+   display: flex;
+   align-items: center;
 }
 
 .cardBodyIcon path {

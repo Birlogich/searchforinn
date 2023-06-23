@@ -17,7 +17,6 @@ function App() {
   let today = new Date();
 
   if (today > expireDateToDate && expireDateToDate) {
-    alert("Ваш accessToken устарел, залогиньтесь заново");
     localStorage.removeItem("accessToken");
   }
 
